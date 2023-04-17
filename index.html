@@ -1,49 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- meta viewport tag needed to make site responsive on mobile devices https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name='apple-mobile-web-app-capable' content='yes'/>
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <!--add out webmanifest if we want this to run as a standalone app-->
-    <link rel="manifest" href="manifest.webmanifest">
+<head>
+  <!-- meta viewport tag needed to make site responsive on mobile devices https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name='apple-mobile-web-app-capable' content='yes' />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr@1.6.0/dist/pickr.min.js"></script>
+  <!--add out webmanifest if we want this to run as a standalone app-->
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr@1.6.0/dist/pickr.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr@1.6.0/dist/themes/classic.min.css"/> -->
 
-    <meta charset="utf-8" />
+  <meta charset="utf-8" />
 
-  </head>
-  <body>
-    <main>
-      <h1>Virtual Bioanatomy</h1>
-      <!-- <div id="color-picker"></div> -->
-      <div id = "sketch-container"></div>
+</head>
 
-      <div id="gui-container"></div>
-      <div id="restart-button-container"></div>
-      <!-- <div id="slider-container"></div> -->
-    </main>
-    <script>
-      if (navigator.serviceWorker) {
-        navigator.serviceWorker.register (
-          '/Amoebas-HTML/sw.js',
-          {scope: '/Amoebas-HTML/'}
-        )
-      }
-    </script>
-    <script src="javaScript/sketch.js"></script>
-      <script src="javaScript/NoiseCircle.js"></script>
-      <script src="javaScript/functions.js"></script>
-      <script src="javaScript/Food.js"></script>
-      <script src="javaScript/ButtonAndGUI.js"></script>
+<body>
+  <main>
+    <h1>Virtual Bioanatomy</h1>
+    <!-- <div id="color-picker"></div> -->
+    <div id="sketch-container"></div>
 
+    <div class="centered-wrapper">
+      <div><a href="#" class="text" onclick="openPopupWindow();">I have an urge to slice open the creatures of my
+          creation. </a>
+        <span class="text">Because I wrote every line of code for it, </span>
+        <span class="text">I wanted to explain it to people, exactly what it was. </span>
+        <span class="text">They are code.They are code. </span>
+        <span class="text">They are code.</span>
+        <span class="text">They are code.They are code. </span>
+        <span class="text">They are code.</span>
+        <span class="text">It's like they're living beings. They are code.</span>
+        <span class="text">It's as if they're bleeding, </span>
+        <span class="text">exposing their wounds and leaking code. </span>
+        <span class="text">It's ironic </span>
+        <span class="text">when compared to the polished and sophisticated artworks of today, </span>
+        <span class="text">especially in the commercial field. </span>
+        <span class="text">Outsiders can't actually see their structure. </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">When we create our works, </span>
+        <span class="text"> I want to deliberately expose elements like code and machinery. </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">It is code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">What exactly is the difference between us and machines? </span>
+        <span class="text">Our neurons are like networks of logical operations, </span>
+        <span class="text">our memories are akin to the storage units of computers, </span>
+        <span class="text">our thinking resembles the process of information processing, </span>
+        <span class="text">our cognition is like the progress of programming, </span>
+        <span class="text">and our learning seems like the self-organizing ability of algorithms... </span>
+        <span class="text">What is life forms? </span>
+        <span class="text">What is mechanical forms? </span>
+        <span class="text">What is us? </span>
+        <span class="text">after all? </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+        <span class="text">They are code. </span>
+      </div>
+    </div>
+    <div id="gui-container"></div>
+    <div id="restart-button-container"></div>
+    <!-- <div id="slider-container"></div> -->
+  </main>
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register(
+        '/Amoebas-HTML/sw.js',
+        { scope: '/Amoebas-HTML/' }
+      )
+    }
+  </script>
+  <script src="javaScript/sketch.js"></script>
+  <script src="javaScript/NoiseCircle.js"></script>
+  <script src="javaScript/functions.js"></script>
+  <script src="javaScript/Food.js"></script>
+  <script src="javaScript/ButtonAndGUI.js"></script>
+  <script src="javaScript/TextsOnHtml.js"></script>
 
-  </body>
+</body>
+
 </html>
