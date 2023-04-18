@@ -56,6 +56,10 @@ a:hover {
   font-size: 20px;
 }
 
+.inline-div{
+  display: inline-block;
+}
+
 .centered-wrapper {
   width: 1000px;
   margin: 0 auto;
