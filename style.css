@@ -10,6 +10,7 @@ body {
 
 h1 {
   position: relative;
+  top:20px;
   font-size: 50px;
   color: rgb(0, 70, 70);
   text-align: center;
@@ -35,8 +36,8 @@ a:hover {
 
 .text {
   position: relative;
-  transition: color 2s;
-  color: gainsboro;
+  transition: color 4s;
+  color:rgb(240,248,255, 0);
   font-size: 22px;
   line-height: 120%;
   /* display: inline; */
@@ -76,6 +77,32 @@ a:hover {
   width: 20%;
   min-width: 100px;
   cursor: pointer;
+}
+
+.ascii-art {
+  position:absolute;
+  z-index:0;
+  font-family: "Courier New", monospace; /* 选择一个等宽字体 */
+  font-size: 14px;
+  line-height: 1.2; /* 调整行高以使字符更紧密 */
+  white-space: pre-wrap; /* 保持原始格式，同时允许自动换行 */
+  color:lightblue;
+}
+
+.dashed-border {
+  position: fixed;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 98%;
+  height: 98%;
+  transform: translate(-50%, -50%);
+  /* border: 20px dashed rgb(149, 172, 199); */
+  border: 24px dashed rgb(149, 172, 199);
+  border-radius: 20px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.1) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+background-size: 20px 20px;
 }
 
 #sketch-container {
