@@ -3,8 +3,12 @@ let popupCounter = 0;
 function openPopupWindow(url) {
   let windowWidth = 400; // 弹窗宽度
   let windowHeight = 300; // 弹窗高度
-  let windowLeft = (screen.width / 2) - (windowWidth / 2); // 居中弹窗
-  let windowTop = (screen.height / 2) - (windowHeight / 2); // 居中弹窗
+  // let windowLeft = (screen.width / 2) - (windowWidth / 2); // 居中弹窗
+  // let windowTop = (screen.height / 2) - (windowHeight / 2); // 居中弹窗
+  // 随机生成窗口位置
+  let windowLeft = Math.floor(Math.random() * (screen.width - windowWidth));
+  let windowTop = Math.floor(Math.random() * (screen.height - windowHeight));
+
 
   popupCounter++;
 
