@@ -3,9 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popup 3</title>
+  <title>photomicrography aesthetics</title>
 </head>
 <body>
-  <p>这是第三个弹出窗口的文本。</p>
+  <!-- "10.png", "11.png", "12.png", "13.png","14.png" -->
+  <!-- <p>这是第三个弹出窗口的文本。</p> -->
+  <img id="myImage" src="" alt="random image" style="width: 100vw;">
+<script>
+  // 图片数组
+  const images = ["11.jpg", "12.jpg", "13.jpg","14.jpg" ];
+
+  // 生成随机数
+  const randomIndex = Math.floor(Math.random() * images.length);
+
+  // 获取图片元素
+  const img = document.getElementById("myImage");
+
+  // 更改图片源
+  img.src = images[randomIndex];
+</script>
+
 </body>
 </html>
