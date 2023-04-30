@@ -12,7 +12,15 @@ h1 {
   position: relative;
   top:20px;
   font-size: 50px;
-  color: rgb(0, 70, 70);
+  color: rgba(0, 70, 70, 0.8);
+  text-align: center;
+  z-index: 0;
+}
+h2{
+  position: relative;
+  top:20px;
+  font-size: 40px;
+  color: rgb(0, 70, 70,0.5);
   text-align: center;
   z-index: 0;
 }
@@ -38,7 +46,7 @@ a:hover {
   position: relative;
   transition: color 4s;
   color:rgb(240,248,255, 0);
-  font-size: 22px;
+  font-size: 18px;
   line-height: 120%;
   /* display: inline; */
   z-index: 10;
@@ -61,10 +69,11 @@ a:hover {
 }
 
 .centered-wrapper {
-  width: 1000px;
+  /* width: 1000px; */
+  width:80%;
   margin: 0 auto;
   text-align: justify;
-  padding-top: 150px;
+  padding-top: 50px;
 }
 
 .button {
@@ -201,4 +210,25 @@ background-size: 20px 20px;
     transform: translateX(-50%);
 
   }
+
+  #mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  }
+  
+  #circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 50vh;
+    z-index: 999;
+  }
+  
+  
 }

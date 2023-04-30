@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,5 +7,39 @@
 </head>
 <body>
   <p>这是第二个弹出窗口的文本。</p>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mouse Glow Effect</title>
+	<style>
+		body {
+			background-color: black;
+			cursor: none; /* 隐藏鼠标 */
+		}
+		#glow {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			box-shadow: 0 0 50px 50px rgba(255, 255, 255, 0.5);
+			pointer-events: none; /* 让鼠标事件穿透 */
+		}
+	</style>
+</head>
+<body>
+	<div id="glow"></div>
+	<img src="mySVG1.svg" alt="example image">
+	<script>
+		document.addEventListener("mousemove", function(event) {
+			var glow = document.getElementById("glow");
+			var mouseX = event.clientX;
+			var mouseY = event.clientY;
+			glow.style.left = mouseX + "px";
+			glow.style.top = mouseY + "px";
+		});
+	</script>
 </body>
 </html>

@@ -25,45 +25,128 @@
 
 <body>
   <main>
-    <h1>Virtual Bioanatomy</h1>
+    <h1>VIRTUAL BIOME:</h1>
+    <h2>Exploring The Definition of Life, Self-
+      <br>Organization, and Artificial Intervention</h2>
 
     <!-- <div id="color-picker"></div> -->
     <div id="sketch-container"></div>
 
     <div class="centered-wrapper">
-      <div>
-        <a href="#" class="text inline-div" onclick="openPopupWindow('popUpWindows/popup0.html');">I have an urge to
-          slice open the creatures of my creation. </a>
-        <a href="#" class="text" onclick="openPopupWindow('popUpWindows/popup1.html'),
-        openPopupWindow('popUpWindows/popup1.html'),openPopupWindow('popUpWindows/popup1.html');">popupwindow 1</a>
-        <a href="#" class="text" onclick="openPopupWindow('popUpWindows/popup2.html');">popupwindow 2</a>
-        <a href="#" class="text" onclick="openPopupWindow('popUpWindows/popup3.html');">popupwindow 3</a>
-      </div>
+      <!-- <div> -->
+        <a href="#" class="text inline-div" onclick="openPopupWindow('popUpWindows/popup0.html');">CODE IS LAW</a>
+        <a href="#" class="text" onclick="openPopupWindow('popUpWindows/popup1.html'),openPopupWindow('popUpWindows/popup1.html'),openPopupWindow('popUpWindows/popup1.html');">CODE IS NOT LAW</a>
+        <a href="#" class="text" onclick="openPopupWindow('popUpWindows/popup2.html');">CODE IS NOT ENOUGH LAW</a>
+        <a href="#" class="text" onclick="openPopupWindow('popUpWindows/popup3.html');">CODE IS NOT ENOUGH TO LAW</a>
+        <a href="#" class="text" onclick="openPopupWindow('popUpWindows/popup0.html');">CODE IS NOT ENOUGH TO BE LAW</a>
+      <!-- </div> -->
       <div class="inline-div">
-        <span class="text">Because I wrote every line of code for it, </span>
-        <span class="text">I wanted to explain it to people, exactly what it was. </span>
-        <span class="text">They are code.They are code. </span>
-        <span class="text">They are code.</span>
-        <span class="text">They are code.They are code. </span>
-        <span class="text">They are code.</span>
-        <span class="text">It's like they're living beings. They are code.</span>
-        <span class="text">It's as if they're bleeding, </span>
-        <span class="text">exposing their wounds and leaking code. </span>
-        <span class="text">It's ironic </span>
-        <span class="text">when compared to the polished and sophisticated artworks of today, </span>
-        <span class="text">especially in the commercial field. </span>
-        <span class="text">Outsiders can't actually see their structure. </span>
-        <span class="text">They are code. </span>
-        <span class="text">They are code. </span>
-        <span class="text">They are code. </span>
-        <span class="text">When we create our works, </span>
-        <span class="text"> I want to deliberately expose elements like code and machinery. </span>
-        <span class="text">They are code. </span>
-        <span class="text">They are code. </span>
-        <span class="text">It is code. </span>
-        <span class="text">They are code. </span>
-        <span class="text">They are code. </span>
-        <span class="text">They are code. </span>
+        <span class="text">let mic;let vol; </span>
+        <span class="text">let vol;</span>
+        <span class="text">let phase = 0; </span>
+        <span class="text">let zoff = 0;</span>
+        <span class="text">let noiseCircles = [];</span>
+        <span class="text">let newFoods = [];</span>
+        <span class="text">let clearing = false;</span>
+        <span class="text">let canvas;</span>
+        <span class="text">let foodPG;</span>
+        <span class="text">let buttonClear;</span>
+        <span class="text">let buttonAddACreature;</span>
+        <span class="text">let buttonKillACreature;</span>
+        <span class="text">let buttonRestart;</span>
+        <span class="text">let redSlider, greenSlider, blueSlider;</span>
+        <span class="text">let disableDrawing = false;</span>
+        <span class="text">class NoiseCircle </span>
+        <span class="text">constructor(_x, _y, _br, zoffUpdate, noiseMax) </span>
+        <span class="text">this.location = new createVector(_x, _y);</span>
+        <span class="text">this.br = _br;</span>
+        <span class="text">this.color = color(27, 89, 31);</span>
+        <span class="text">this.coreColor = color(255, 0, 0);</span>
+        <span class="text">this.velocity = new createVector(random(-0.7, 0.7), random(-0.7, 0.7))</span>
+        <span class="text">this.zoffUpdate = zoffUpdate;</span>
+        <span class="text">this.noiseMax = noiseMax;</span>
+        <span class="text">this.originalSize = this.br;</span>
+        <span class="text">this.desired = new createVector(0,0); </span>
+        <span class="text">this.desired = new createVector(0,0); </span>
+        <span class="text">this.speedLimit = random(1, this.originalSize);</span>
+        <span class="text">this.creatureState = "hungry";</span>
+        <span class="text">this.hungryThreshold = 3;</span>
+        <span class="text">this.fullThreshold = 5;</span>
+        <span class="text">this.isFull = function ()</span>
+        <span class="text">return this.creatureState === 'full'; </span>
+        <span class="text">if (this.creatureState === 'hungry' && this.br >= this.fullThreshold) </span>
+        <span class="text">this.changeState('full');</span>
+        <span class="text">else if (this.creatureState === 'full' && this.br <= this.hungryThreshold) </span>
+        <span class="text">this.changeState('hungry');</span>
+        <span class="text">if (this.creatureState === 'full' && this.br > this.originalSize) </span>
+        <span class="text">this.br -= 0.1;</span>
+        <span class="text">if (this.br < this.hungryThreshold) </span>
+        <span class="text">this.changeState('hungry'); </span>
+        <span class="text">else if (this.br > this.fullThreshold) </span>
+        <span class="text">this.changeState('full'); </span>
+        <span class="text">findFood(x, y) </span>
+        <span class="text">this.desired.x = x; </span>
+        <span class="text">this.desired.y = y;</span>
+        <span class="text">let direction = p5.Vector.sub(this.desired, this.location);</span>
+        <span class="text">if (direction.mag() < this.br * 5)</span>
+        <span class="text">return true;</span>
+        <span class="text">if (direction.mag() < 50) </span>
+        <span class="text">direction.normalize();</span>
+        <span class="text">this.velocity.add(direction);</span>
+        <span class="text">let angle = noise(this.location.x / 500, this.location.y / 500, frameCount / 20) * TWO_PI * 2; </span>
+        <span class="text">this.friction.x = this.velocity.x * -1;</span>
+        <span class="text">this.friction.y = this.velocity.y * -1;</span>
+        <span class="text">this.friction.normalize();</span>
+        <span class="text">this.friction.mult(0.1); </span>
+        <span class="text">this.velocity.add(this.friction);</span>
+        <span class="text">this.velocity.limit(this.speedLimit);</span>
+        <span class="text">this.location.x += this.velocity.x * sin(angle) * 5;</span>
+        <span class="text">this.location.y += this.velocity.y * cos(angle) * 5;</span>
+        <span class="text">this.location.add(this.velocity);</span>
+        <span class="text">return false;</span>
+        <span class="text">changeState(newState)</span>
+        <span class="text"> this.creatureState = newState;</span>
+        <span class="text">crawling()  </span>
+        <span class="text">let angle = noise(this.location.x / 500, this.location.y / 500, frameCount / 20) * TWO_PI * 2;</span>
+        <span class="text">this.location.x += this.velocity.x * cos(angle) * 3;</span>
+        <span class="text">this.location.y += this.velocity.y * sin(angle) * 3;</span>
+        <span class="text">bouncing() </span>
+        <span class="text">if (this.location.x < 0 || this.location.x > width) this.velocity.x *= -1;</span>
+        <span class="text">if (this.location.y < 0 || this.location.y > height) this.velocity.y *= -1;</span>
+        <span class="text">communication(other) </span>
+        <span class="text">let d = dist(this.location.x, this.location.y, other.location.x, other.location.y);</span>
+        <span class="text">return d < this.br * 50 + other.br * 50;</span>
+        <span class="text">contains(px, py)  </span>
+        <span class="text">if (d < this.r)</span>
+        <span class="text">return true;</span>
+        <span class="text">else </span>
+        <span class="text">return false;</span>
+        <span class="text">changeColor(c)  </span>
+        <span class="text">this.color = c;</span>
+        <span class="text">changeCoreColor(c)</span>
+        <span class="text">this.coreColor = c;</span>
+        <span class="text">Draw(r) </span>
+        <span class="text">push(); </span>
+        <span class="text">translate(this.location.x, this.location.y); </span>
+        <span class="text">fill(this.color, alpha1);</span>
+        <span class="text">stroke(255, 100); </span>
+        <span class="text">let alpha1 = 5;</span>
+        <span class="text">beginShape(); </span>
+        <span class="text">for (let a = 0; a < TWO_PI; a += radians(5)) </span>
+        <span class="text">let xoff = map(cos(a + phase), -1, 1, 0, this.noiseMax + r);</span>
+        <span class="text">let yoff = map(sin(a + phase), -1, 1, 0, this.noiseMax + r); </span>
+        <span class="text">let rad = r + map(noise(xoff, yoff, zoff), 0, 1, r, this.br * 100);</span>
+        <span class="text">let x = rad * cos(a);</span>
+        <span class="text">let y = rad * sin(a);</span>
+        <span class="text">curveVertex(x, y);</span>
+        <span class="text">endShape(CLOSE);</span>
+        <span class="text">phase += 0.001;</span>
+        <span class="text">zoff += this.zoffUpdate;</span>
+        <span class="text">let alpha2 = map(r, 0, 0.5, 20, 255);</span>
+        <span class="text">fill(255, 255, 200, alpha1);</span>
+        <span class="text">ellipse(0, 0, r + this.br * 20);</span>
+        <span class="text">pop();</span>
+
         <span class="text">What exactly is the difference between us and machines? </span>
         <span class="text">Our neurons are like networks of logical operations, </span>
         <span class="text">our memories are akin to the storage units of computers, </span>
@@ -77,22 +160,13 @@
         <span class="text">They are code. </span>
         <span class="text">They are code. </span>
         <span class="text">They are code. </span>
+        <span class="text">THE MACHINE IS US, an aspect of our embodiment.</span>
+        <span class="text">OUR PROCESSES,</span>
+        <span class="text">AN ASPECT OF OUR EMBODIMENT. </span>
         <span class="text">They are code. </span>
-        <span class="text">They are code. </span>
-        <span class="text">They are code. </span>
-        <span class="text">They are code. </span>
-        <span class="text">They are code. </span>
         <span class="text">WE ARE CODE. </span>
-        <span class="text">WE ARE CODE. </span>
-        <span class="text">WE ARE CODE. </span>
-        <span class="text">WE ARE CODE. </span>
-        <span class="text">WE ARE CODE. </span>
-        <span class="text">WE ARE CODE. </span>
-        <span class="text">WE ARE CODE. </span>
-        <span class="text">WE ARE CODE. </span>
-        <span class="text">WE ARE CODE. </span>
-        <span class="text">WE ARE CODE. </span>
-        <span class="text">CODE IS LAW. </span>
+        <span class="text">WE ARE CYBORG. </span>
+
       </div>
       <div id="gui-container"></div>
 

@@ -10,7 +10,6 @@ class NoiseCircle {
 
     this.originalSize = this.br; // the basic core radius
     this.desired = new createVector(0,0); //desired the food location
-    //this.direction = new createVector(random(-1, 1), random(-1, 1)).normalize();
     this.friction = new createVector(0, 0);
     this.speedLimit = random(1, this.originalSize);
 
@@ -18,38 +17,9 @@ class NoiseCircle {
     this.hungryThreshold = 3;
     this.fullThreshold = 5;
 
-    // this.lastEatTime = millis();
-    //this.maxSize = 6;
-
-    // this.timeThresholds = {
-    //   hungryToFull: 3000, // 从饥饿到饱食
-    //   fullToHungry: 10000 // 从饱食到饥饿
-    // }
-    // this.checkState = function () {
-    //   const currentTime = millis();
-    //   const timeSinceLastEat = currentTime - this.lastEatTime;
-
-    //   if (this.br >= this.maxSize) {
-    //     this.creatureState = "full";
-    //   }
-
-    //   if (this.creatureState === 'hungry') {
-    //     if (timeSinceLastEat >= this.timeThresholds.hungryToFull) {
-    //       this.creatureState = 'full';
-    //       this.lastEatTime = currentTime;
-    //     }
-    //   } else if (this.creatureState === 'full') {
-    //     if (timeSinceLastEat >= this.timeThresholds.fullToHungry) {
-    //       this.creatureState = 'hungry';
-    //       this.lastEatTime = currentTime;
-    //     }
-    //   }
-    // }
     this.isFull = function () {
       return this.creatureState === 'full';
     }
-
-
   }
 
   update() {
@@ -91,8 +61,6 @@ class NoiseCircle {
 
       //crawling zigzaggy
       let angle = noise(this.location.x / 500, this.location.y / 500, frameCount / 20) * TWO_PI * 2; //0-2PI
-      //this.velocity = p5.Vector.fromAngle(angle);
-      
 
       this.friction.x = this.velocity.x * -1;
       this.friction.y = this.velocity.y * -1;
