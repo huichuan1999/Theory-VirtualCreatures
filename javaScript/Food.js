@@ -14,7 +14,6 @@ class Food{
         this.canvas.fill(this.color);
         this.canvas.strokeWeight(2);
         this.canvas.stroke(255,255,0,100);
-        //this.canvas.noStroke();
         this.canvas.circle(this.location.x,this.location.y,this.r);
 
         this.canvas.pop();

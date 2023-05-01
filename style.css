@@ -3,44 +3,42 @@ body {
   margin: 0;
   padding: 0;
   background-color: aliceblue;
-  /* background-color: rgb(0, 50, 50); */
-  font-family: "Consolas", "Monaco", "Lucida Console", "Liberation Mono", 
-  "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+  font-family: "Consolas", "Monaco", "Lucida Console", "Liberation Mono",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
 }
 
 h1 {
   position: relative;
-  top:20px;
+  top: 20px;
   font-size: 50px;
   color: rgba(0, 70, 70, 0.8);
   text-align: center;
   z-index: 0;
 }
-h2{
+
+h2 {
   position: relative;
-  top:20px;
+  top: 20px;
   font-size: 40px;
-  color: rgb(0, 70, 70,0.5);
+  color: rgb(0, 70, 70, 0.5);
   text-align: center;
   z-index: 0;
 }
 
 canvas {
   display: block;
-  position:fixed;
-  top:0px;
+  position: fixed;
+  top: 0px;
   margin: auto;
-  z-index:1;
+  z-index: 1;
 }
 
 a {
   text-decoration: none;
-  /* 移除下划线 */
 }
 
 a:hover {
   text-decoration: underline;
-  /* 添加下划线 */
   transition: color 0.01s;
   color: red;
 }
@@ -48,10 +46,9 @@ a:hover {
 .text {
   position: relative;
   transition: color 4s;
-  color:rgb(240,248,255, 0);
+  color: rgb(240, 248, 255, 0);
   font-size: 18px;
   line-height: 120%;
-  /* display: inline; */
   z-index: 10;
 }
 
@@ -61,19 +58,19 @@ a:hover {
 }
 
 .codeText {
-  font-family: "Consolas", "Monaco", "Lucida Console", "Liberation Mono", 
-  "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+  font-family: "Consolas", "Monaco", "Lucida Console", "Liberation Mono",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
   position: fixed;
   font-size: 20px;
 }
 
-.inline-div{
+.inline-div {
   display: inline-block;
 }
 
 .centered-wrapper {
   /* width: 1000px; */
-  width:80%;
+  width: 80%;
   margin: 0 auto;
   text-align: justify;
   padding-top: 50px;
@@ -96,13 +93,13 @@ a:hover {
 }
 
 .ascii-art {
-  position:absolute;
-  z-index:0;
-  font-family: "Courier New", monospace; /* 选择一个等宽字体 */
+  position: absolute;
+  z-index: 0;
+  font-family: "Courier New", monospace;
   font-size: 14px;
-  line-height: 1.2; /* 调整行高以使字符更紧密 */
-  white-space: pre-wrap; /* 保持原始格式，同时允许自动换行 */
-  color:lightblue;
+  line-height: 1.2;
+  white-space: pre-wrap;
+  color: lightblue;
 }
 
 .dashed-border {
@@ -113,16 +110,14 @@ a:hover {
   width: 98%;
   height: 98%;
   transform: translate(-50%, -50%);
-  /* border: 20px dashed rgb(149, 172, 199); */
   border: 24px dashed rgb(149, 172, 199);
   border-radius: 20px;
-  background: linear-gradient(0deg, rgba(0,0,0,0.1) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
-background-size: 20px 20px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 #sketch-container {
-  /* position: relative; */
   position: absolute;
   top: 0%;
   left: 0%;
@@ -135,10 +130,8 @@ background-size: 20px 20px;
   display: flex;
   flex-direction: row;
 
-  /* position: fixed; */
   position: relative;
   bottom: 0px;
-  /* left: 50%; */
   z-index: 20;
   width: auto;
   padding: 10px;
@@ -162,13 +155,11 @@ background-size: 20px 20px;
   margin: 10px 0;
   box-sizing: border-box;
   background-color: rgb(255, 255, 255, 0.7);
-
 }
 
 #color-picker {
   position: absolute;
   z-index: 10;
-  /* 将 z-index 值设置为 10，比 canvas 更高 */
 }
 
 
@@ -178,13 +169,14 @@ background-size: 20px 20px;
     font-size: 20px;
     width: 100%;
   }
+
   .text {
     font-size: 14px;
   }
 
   .centered-wrapper {
     /* width: 1000px; */
-    width:100%;
+    width: 100%;
     margin: 0 auto;
     text-align: justify;
     padding-top: 50px;
@@ -193,11 +185,9 @@ background-size: 20px 20px;
   .button {
     font-size: 20px;
     width: 50%;
-    /* margin-right: 10px; */
     margin-bottom: 10px;
     flex-basis: 50%;
     box-sizing: border-box;
-
   }
 
   #gui-container>div:nth-child(2) {
@@ -233,7 +223,7 @@ background-size: 20px 20px;
     height: 100%;
     background-color: black;
   }
-  
+
   #circle {
     position: absolute;
     top: 50%;
@@ -243,6 +233,4 @@ background-size: 20px 20px;
     height: 50vh;
     z-index: 999;
   }
-  
-  
 }

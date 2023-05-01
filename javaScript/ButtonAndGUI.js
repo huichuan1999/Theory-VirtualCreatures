@@ -71,8 +71,6 @@ function RGBSlider() {
 
 function updateFoodColor(r, g, b) {
     for (let i = 0; i < newFoods.length; i++) {
-        // Set the new color for the food
         newFoods[i].changeColor(color(r, g, b));
     }
-    //document.body.style.backgroundColor = 'rgb(r,g,b)';
 }

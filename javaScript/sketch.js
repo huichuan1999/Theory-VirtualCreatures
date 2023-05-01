@@ -1,15 +1,19 @@
-//Amoebas - HTML
-//1-14-2023,Huichuan Wang
+//Amoebas - HTML interaction, with text
+//4-2023,Huichuan Wang
 /*
 It is a array of amoebas shapes like fried eggs, so at first I named it egg amoeba.
-I want to show it like real amoebas crawling zigzaggy. It will react to your sound, like a biological stress response. They also would like to communicate to each other,when they get close they will change color and concat together, exchange pheromones.
-When you make a sound, yellow dots are generated at random positions, and their radius is your volume.When your sound is higher than the threshold, the background change.
+I want to show them like real amoebas crawling zigzaggy. It will react to your sound, like a biological stress response.
+They also would like to communicate to each other,when they get close they will change color and concat together, exchange pheromones.
+When you click the screen, yellow dots are generated as foods, you can observe the creatures move towards them and eat them.
+Click the buttons to clear food, add creatures, kill them, or restart.
 */
 //Acknowledgements (references, links, inspirations, etc:
 //noise loop references:https://editor.p5js.org/codingtrain/sketches/sy1p1vnQn
-//mic threshold : https://editor.p5js.org/p5/sketches/Sound:_Mic_Threshold
 //particle system: https://p5js.org/examples/simulate-particles.html
 //Genetic Algorithms and Evolutionary Computing :https://natureofcode.com/book/chapter-9-the-evolution-of-code/ 
+//move to food functions: https://huichuan1999.github.io/feeding-creatures/ 
+//https://learn.gold.ac.uk/mod/page/view.php?id=1256417 
+//The Progressive Web Apps (PWA) Template: https://learn.gold.ac.uk/mod/page/view.php?id=1270682
 
 let mic;
 let vol;
@@ -65,8 +69,6 @@ function draw() {
   //console.log(vol);
   
   if (frameCount % 2 == 0)randomPoints();//the background color
-  //soundThreshod();
-  //image(fogBackground, 0, 0);
 
   for (let i = 0; i < noiseCircles.length; i++) {
     noiseCircles[i].Draw(vol);
@@ -79,13 +81,11 @@ function draw() {
     let fullThreshold = 5;
 
     if (currentSize < hungryThreshold) {
-      //noiseCircles[i].changeState("hungry");
     } else if (currentSize >= fullThreshold) {
       noiseCircles[i].changeState("full");
     }
 
     if (noiseCircles[i].creatureState == "full") {
-      //console.log("i am full");
       if (currentSize > noiseCircles[i].originalSize) {
 
         noiseCircles[i].br -= 0.1;
@@ -98,9 +98,8 @@ function draw() {
 
       clearing = false;
       if (!clearing && noiseCircles[i].findFood(newFoods[f].location.x, newFoods[f].location.y)) {
-        //when it eat, it become bigger HUNGRY // 在这里执行生物处于饥饿状态时的操作
-        //console.log("Arrived");
-        noiseCircles[i].br += 0.1; //吃东西 变大
+        //when it eat, it become bigger HUNGRY 
+        noiseCircles[i].br += 0.1; //eat, get bigger
         if (noiseCircles[i].creatureState == "full") {
           break;
         }
@@ -108,7 +107,6 @@ function draw() {
       }
       newFoods[f].display();
     }
-    //console.log(clearing);
     //communication
     let overlapping = false;
     for (let j = 0; j < noiseCircles.length; j++) {
@@ -158,7 +156,5 @@ function addGUI() {
   buttonAddACreature = new Button("Add A Creature", buttonAddACreaturePress);
   buttonKillACreature = new Button("Kill A Creature", buttonKillACreaturePress);
   buttonRestart = new Button("Restart", buttonRestartPress);
-  //buttonRestart.parent("restart-button-container");
-  //RGBSlider();
 }
 
